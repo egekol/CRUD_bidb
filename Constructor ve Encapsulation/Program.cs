@@ -3,18 +3,26 @@
 namespace Constructor_ve_Encapsulation
 {
 
-    class human //class: bir kavramı belirtir
+    class Human //class: bir kavramı belirtir
     {
-        public human()
+
+        public int Age;
+        public string Gender;
+        public string Language;
+
+        public Human(int personAge, string personGender, string personLanguage)// class constructor kullanarak çoklu parametre oluşturmayı sağlıyoruz.
         {
+            Age = personAge;
+            Gender = personGender;
+            Language = personLanguage;
             Console.WriteLine("New human object has been created.");
         }
 
 
 
-        public String name; //her insanın bir ismi vardır, bu onun özelliğidir.
+        public String Name; //her insanın bir ismi vardır, bu onun özelliğidir.
         //!! int weight = 80; //class içinde belirlenmesi kavramdaki her insanın sabit kiloya denk gelmesi demektir
-        public int weight;
+        public int Weight;
         //*** bir değişkenin public halde tutlması tercih edilmez. Bu sebeple encapsualiton ile getter/ setter fonksiyonlarını kullanırız
         private int _height;
 
@@ -27,7 +35,7 @@ namespace Constructor_ve_Encapsulation
             set
             {
                 if (value < 0)
-                    this._height = -1 * value; //hata da yazdırabilirdik
+                    this._height = -1 * value; //hata da yazdırabilirdik ** design patterns (singleton), dependancy injection
                 else
                     this._height = value;
             }
@@ -47,21 +55,42 @@ namespace Constructor_ve_Encapsulation
 
     }
 
+    class Depart : Human //inheritance
+    {
+        public string Department 
+        {
+            get;
+            set;
+        }
+
+        public void Role () { Console.WriteLine("Department role has been given to user: " + Department); }
+
+        public Depart(int personAge, string personGender, string PersonLanguage) : base(personAge, personGender, PersonLanguage)
+        {
+
+        }
+
+
+
+    }
+
     class Program
     {
         static void Main(string[] args)
         {
-            human ali = new human(); //yeni obje ürettik
-            ali.name = "ali demir";
-            ali.weight = 80;
+
+            Human ali = new Human(15, "Male", "Turkish"); //yeni obje ürettik
+            ali.Name = "ali demir";
+            ali.Weight = 80;
             //ali.setHeight(170); BUNUN YERİNE:
             ali.Height = 170;
 
-            human veli = new human();
-            veli.weight = 70;
+
+            Human veli = new Human(22, "Male", "French");
+            veli.Weight = 70;
             Console.WriteLine("Youtube: Bilgisayar Kavramları");
             Console.WriteLine("Ali'nin boyu : " + ali.Height);
-
+            Console.WriteLine("Veli: " + veli.Age + " " + veli.Gender + " " + veli.Language);
             //eğer set edilen değer eksi olsaydI?
             //ali.setHeight(-170); BUNUN YERİNE:
             ali.Height = -170;
@@ -70,6 +99,14 @@ namespace Constructor_ve_Encapsulation
             Console.WriteLine("Ali'nin boyu : " + ali.Height);
 
 
+
+            Depart egeDepart = new Depart(21, "Male", "Turkish");
+
+            egeDepart.Department = "Industrial Engineering";
+            egeDepart.Role();
+
         }
     }
+
+
 }
