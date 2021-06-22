@@ -10,22 +10,24 @@ namespace Constructor_ve_Encapsulation
         public string Gender;
         public string Language;
 
-        public Human(int personAge, string personGender, string personLanguage)// class constructor kullanarak çoklu parametre oluşturmayı sağlıyoruz.
+        public Human(int personAge, string personGender, string personLanguage) //class constructor kullanarak çoklu parametre oluşturmayı sağlıyoruz.
         {
             Age = personAge;
             Gender = personGender;
             Language = personLanguage;
             Console.WriteLine("New human object has been created.");
         }
-
-
-
+        public void Building() //Polymorphism. Oluşturulan methodun aynısını diğer inherited classlarda kullanabiliyoruz. çağırırken aynı method ismini 
+        //yazıyorsun fakat class'ın kendisine özel fonksiyonlar çalışıyor.
+        {
+            Console.WriteLine("Departmants have buildings.");
+        }
+        
         public String Name; //her insanın bir ismi vardır, bu onun özelliğidir.
         //!! int weight = 80; //class içinde belirlenmesi kavramdaki her insanın sabit kiloya denk gelmesi demektir
         public int Weight;
         //*** bir değişkenin public halde tutlması tercih edilmez. Bu sebeple encapsualiton ile getter/ setter fonksiyonlarını kullanırız
         private int _height;
-
         public int Height //aşağıda oluşturduğumuz getter setter fonksiyonları yerine csharpta böyle bir kolaylık yapabiliriz.
         {
             get
@@ -55,7 +57,7 @@ namespace Constructor_ve_Encapsulation
 
     }
 
-    class Depart : Human //inheritance
+    class IndustrialEngineer : Human //inheritance
     {
         public string Department 
         {
@@ -65,11 +67,15 @@ namespace Constructor_ve_Encapsulation
 
         public void Role () { Console.WriteLine("Department role has been given to user: " + Department); }
 
-        public Depart(int personAge, string personGender, string PersonLanguage) : base(personAge, personGender, PersonLanguage)
+        public IndustrialEngineer(int personAge, string personGender, string PersonLanguage) : base(personAge, personGender, PersonLanguage)
         {
 
         }
 
+        public void Building()
+        {
+            Console.WriteLine("Industrial Engineers has Maçka Building.");
+        }
 
 
     }
@@ -99,12 +105,12 @@ namespace Constructor_ve_Encapsulation
             Console.WriteLine("Ali'nin boyu : " + ali.Height);
 
 
+            IndustrialEngineer ege = new IndustrialEngineer(21, "Male", "Turkish");
 
-            Depart egeDepart = new Depart(21, "Male", "Turkish");
-
-            egeDepart.Department = "Industrial Engineering";
-            egeDepart.Role();
-
+            ege.Department = "Industrial Engineering";
+            ege.Role();
+            veli.Building();
+            ege.Building();
         }
     }
 
