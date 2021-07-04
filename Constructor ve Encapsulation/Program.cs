@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace Constructor_ve_Encapsulation
 {
@@ -37,10 +38,15 @@ namespace Constructor_ve_Encapsulation
             set
             {
                 if (value < 0)
+                   
+                {
+                    //Debug.Assert(false, "there is an error", "U fucked up the program dude...");
                     this._height = -1 * value; //hata da yazdırabilirdik ** design patterns (singleton), dependancy injection
+                }
                 else
+                {
                     this._height = value;
-            }
+                }            }
         }
         //AŞAĞIDAKİ FONKSİYON YERİNE YUKARIDA GET/SET YAZDIK
         //public void setHeight (int height)//niye get set yaptık? Niye private hale çevirdik? Kontrollerin ve yetkilerin bizim elimizde olması için.
@@ -55,6 +61,26 @@ namespace Constructor_ve_Encapsulation
         //    return _height;  
         //}
 
+    }
+
+    abstract class Etik
+    {
+        // Abstract method (does not have a body)
+        public abstract void Credit();
+        // Regular method
+        public void classPass()
+        {
+            Console.WriteLine("Every department has ethics lesson");
+        }
+    }
+
+    class End : Etik
+    {
+        public override void Credit()
+        {
+            // The body of animalSound() is provided here
+            Console.WriteLine("3 credits of ethics lesson passed!");
+        }
     }
 
     class IndustrialEngineer : Human //inheritance
@@ -72,11 +98,10 @@ namespace Constructor_ve_Encapsulation
 
         }
 
-        public void Building()
+        public new void Building()
         {
             Console.WriteLine("Industrial Engineers has Maçka Building.");
         }
-
 
     }
 
@@ -104,13 +129,18 @@ namespace Constructor_ve_Encapsulation
 
             Console.WriteLine("Ali'nin boyu : " + ali.Height);
 
-
             IndustrialEngineer ege = new IndustrialEngineer(21, "Male", "Turkish");
 
             ege.Department = "Industrial Engineering";
             ege.Role();
-            veli.Building();
             ege.Building();
+            
+            veli.Building();
+
+            //Abstraction
+            End dersEnd = new End();
+            dersEnd.classPass();
+            dersEnd.Credit();
         }
     }
 
