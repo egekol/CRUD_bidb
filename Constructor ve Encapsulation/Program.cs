@@ -78,7 +78,7 @@ namespace Constructor_ve_Encapsulation
     {
         public override void Credit()
         {
-            // The body of animalSound() is provided here
+            // The body of classPass() is provided here
             Console.WriteLine("3 credits of ethics lesson passed!");
         }
     }
@@ -145,4 +145,6 @@ namespace Constructor_ve_Encapsulation
     }
 
 
+    //SQL 
+    
 }
