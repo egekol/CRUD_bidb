@@ -30,9 +30,6 @@ namespace Metotlar
 
             sepetManager.Ekle(urun1);
 
-
-
-
         }
     }
 }

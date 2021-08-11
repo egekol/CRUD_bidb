@@ -17,6 +17,9 @@ namespace Metotlar
         }
 
         public void Ekle2(string UrunAdi, string aciklama, double fiyat)
+        {
+            //no encapsulation.
+        }
 
     }
 }
