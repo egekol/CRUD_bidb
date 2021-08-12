@@ -27,7 +27,7 @@ namespace Metotlar
             SepetManager sepetManager = new SepetManager();
 
             sepetManager.Ekle(urun2);
-
+            
             sepetManager.Ekle(urun1);
 
         }
