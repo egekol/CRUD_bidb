@@ -4,15 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OOP3;
+using OOP3_Polymorphism_Injection;
 
 namespace OOP3_Polymorphism
 {
     class AuthorizeManager
     {
-
-        public void Authorize(ICreditManager creditManager)
+        //Method Injection
+        public void Authorize(ICreditManager creditManager, List<ILoggerService> loggerServices)
         {
             creditManager.Calculate();
+            foreach (var loggerService in loggerServices)
+            {
+                loggerService.Log();
+            }
         }
 
         public void KrediOnBilgilendirmesiYap(List<ICreditManager> creditManager)
@@ -22,6 +27,15 @@ namespace OOP3_Polymorphism
                 manager.Calculate();
             }
         }
+
+        //public void LogAfterAuthorizing(List<ILoggerService> loggerServices)
+        //{
+        //    foreach (var loggerService in loggerServices)
+        //    {
+        //        loggerService.Log();
+                
+        //    }
+        //}
 
     }
 }

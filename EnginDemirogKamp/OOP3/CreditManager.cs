@@ -8,6 +8,8 @@ namespace OOP3
 {
     interface ICreditManager
     {
+        //kod içerikleri birbirinin alternatifi olmasına rağmen içerikleri farklı olan durumlar içindir.
+        //polymorphism.
         void Calculate();
         void DoSmth();
     }

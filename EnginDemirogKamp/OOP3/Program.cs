@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using OOP3_Polymorphism;
+using OOP3_Polymorphism_Injection;
 
 namespace OOP3
 {
@@ -15,7 +16,7 @@ namespace OOP3
             AuthorizeManager authorizeManager = new AuthorizeManager();
 
             ICreditManager ihtiyacCreditManager = new IhtiyacCreditManager();
-            authorizeManager.Authorize(ihtiyacCreditManager);
+            //authorizeManager.Authorize(ihtiyacCreditManager);
             
             ICreditManager tasitCreditManager = new TasitCreditManager();
             //tasitCreditManager.Calculate();
@@ -25,6 +26,22 @@ namespace OOP3
             Console.WriteLine("-------------------------");
             List<ICreditManager> creditList = new List<ICreditManager>(){ihtiyacCreditManager, konutCreditManager};
             authorizeManager.KrediOnBilgilendirmesiYap(creditList);
+
+            Console.WriteLine("-------------------------");
+
+            //authorizeManager.Authorize(ihtiyacCreditManager, new DatabaseLoggerService());
+            
+            Console.WriteLine("-------------------------");
+            //authorizeManager.LogAfterAuthorizing(new List<ILoggerService>()
+            //{
+            //    new DatabaseLoggerService(),new FileLoggerService()
+
+            //}); YERİNE:
+
+            authorizeManager.Authorize(ihtiyacCreditManager, new List<ILoggerService>()
+            {
+                new DatabaseLoggerService(), new FileLoggerService()
+            });
 
 
         }
