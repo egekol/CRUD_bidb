@@ -51,7 +51,7 @@ namespace DataAccess.Concrete.InMemory
 
         public List<Product> GetAllByCategory(int categoryId)
         {
-            throw new NotImplementedException();
+            return _products.Where(p => p.CategoryId == categoryId).ToList();
         }
 
         public void Update(Product product)
