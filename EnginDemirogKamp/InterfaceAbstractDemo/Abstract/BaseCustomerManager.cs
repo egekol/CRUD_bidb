@@ -11,7 +11,9 @@ namespace InterfaceAbstractDemo.Abstract
     {
         public virtual void Save(Customer customer)
         {
-            Console.WriteLine("Save to db : " + customer.FirstName);
+            Console.WriteLine("Saved to Database : " + customer.FirstName + " "+ customer.LastName +
+                "\nHave a great Day!" +
+                "\n-----------------");
 
         }
     }

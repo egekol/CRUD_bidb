@@ -1,5 +1,6 @@
 ﻿using InterfaceAbstractDemo.Abstract;
 using InterfaceAbstractDemo.Entities;
+using InterfaceAbstractDemo.Adapters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,10 +23,13 @@ namespace InterfaceAbstractDemo.Concrete
             if (_customerCheckService.CheckIfRealCustomer(customer))
             {
                 base.Save(customer);
+                Console.WriteLine("Your Starbucks Token has been added.");
+                //Abstract
             }
             else
             {
-                throw new Exception("Not a valid Person");
+                Console.WriteLine("Not A Valid Person");
+                //throw new Exception("Not a valid Person");
             }
             
         }
