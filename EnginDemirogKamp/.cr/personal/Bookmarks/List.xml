@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root Type="DevExpress.CodeRush.Foundation.Markers.SolutionBookmarksContainer">
+  <Options Language="Neutral">
+    <Items>
+      <Item Id="{372db5fd-8d2e-4739-aaeb-1832e0f1c3dd}">
+        <Id>1</Id>
+        <File>EnginDemirogKamp\InterfaceAbstractDemo\Concrete\NeroCustomerManager.cs</File>
+        <Line>9</Line>
+        <Character>16</Character>
+        <ViewportTopMax>281</ViewportTopMax>
+      </Item>
+    </Items>
+  </Options>
+</Root>
