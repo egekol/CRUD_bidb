@@ -12,7 +12,7 @@ namespace InterfaceAbstractDemo
         {
             //ICustomerCheckService customerService = new MernisServiceAdapter();
             BaseCustomerManager customerManager = new StarbucksCustomerManager(new MernisServiceAdapter());
-            Customer customer1 = new Customer { DateofBirth = new DateTime(2000, 1, 1), FirstName = "Ege", LastName = "Kol", Id = 1, NationalityId = "1" };
+            Customer customer1 = new Customer { DateofBirth = new DateTime(2000, 1, 1), FirstName = "Ege", LastName = "Kol", Id = 1, NationalityId = "19669944334" };
             //CustomerCheckManager checkManager = new CustomerCheckManager();
 
             
