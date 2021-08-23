@@ -42,8 +42,29 @@ namespace LINQ
             {
                 Console.WriteLine(product.ProductName);
             }
+        }
 
 
+        //LINQ ile yazılmadığı takdirde kod uzunluğu:
+        static List<Product> GetProducts(List<Product> products)
+        {
+            List<Product> p = new List<Product>();
+            foreach (var product in products)
+            {
+                if (product.UnitPrice > 5000 && product.UnitsInStock >2)
+                {
+                    p.Add(product);
+                    //Console.WriteLine(product.ProductName);
+                }
+                
+            }
+            return p;
+        }
+        
+        //Aynı kod - LINQ:
+        static List<Product> GetProductsLinq(List<Product> products)
+        {
+            return products.Where(p => p.UnitPrice > 5000 && p.UnitsInStock > 2).ToList();
         }
 
         class Product
