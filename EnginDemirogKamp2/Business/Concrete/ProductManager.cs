@@ -9,7 +9,7 @@ namespace Business.Concrete
     public class ProductManager:IProductService
     {
         //-----------
-        //Business altında çekeceğin database'i iş kodularını yazabilmek için kullanabilmen gerek.
+        //Business altında çekeceğin database'i iş kodlarını yazabilmek için kullanabilmen gerek.
         //Bütün database'i new leyerek çekmen çok yanlış (çok büyük olabilir, değişiklikler gösterebilir).
         //IProductDal _productDal = new InMemoryProductDal(); ----- YANLIŞ
         //Bunun için öğrendiğimiz yöntem: INJECTION.
