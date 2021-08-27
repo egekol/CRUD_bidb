@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccess.Abstract;
@@ -47,6 +48,11 @@ namespace DataAccess.Concrete
             };
         }
 
+        public Car GetBy(Expression<Func<Car, bool>> filter)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Add(Car car)
         {
 
@@ -71,7 +77,13 @@ namespace DataAccess.Concrete
             _cars.Remove(toDeleteCar);
         }
 
-        public List<Car> GetAllCars()
+        public List<Car> GetAllCars(Expression<Func<Car, bool>> filter = null)
+        {
+            //DOLDUR!!!!!!!!!!!!!!!
+            throw new NotImplementedException();
+        }
+
+        /*public List<Car> GetAllCars()
         {
             return _cars;
         }
@@ -80,6 +92,6 @@ namespace DataAccess.Concrete
         {
 
             return _cars.Where(p => p.BrandId == brandId).ToList();
-        }
+        }*/
     }
 }

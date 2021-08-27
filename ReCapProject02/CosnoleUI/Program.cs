@@ -42,6 +42,13 @@ namespace CosnoleUI
              {
                  Console.WriteLine(cars.Description + "\n");
              }
+
+             Console.WriteLine("-----------------------------------");
+
+             foreach (var car in carManager.GetByBrandId(2))
+             {
+                 Console.WriteLine(car.Description+" : " + car.BrandId+"\n");
+             }
         }
     }
 }

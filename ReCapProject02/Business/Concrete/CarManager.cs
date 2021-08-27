@@ -12,6 +12,7 @@ namespace Business.Concrete
     public class CarManager:ICarService
     {
         private ICarDal _carDal;
+        //private Brand _brandDal;
 
         public CarManager(ICarDal carDal)
         {
@@ -46,7 +47,14 @@ namespace Business.Concrete
         public List<Car> GetByBrandId(int brandId)
         {
             Console.WriteLine("List of cars filtered with {0}: ",brandId);
-            return _carDal.GetByBrandIdCars(brandId);
+            //return _carDal.GetByBrandIdCars(brandId);
+            return _carDal.GetAllCars(c => c.BrandId == brandId);
+            
+        }
+
+        public List<Car> GetByUnityPrice(decimal min, decimal max)
+        {
+            return _carDal.GetAllCars(c => c.DailyPrice > min && c.DailyPrice < max);
         }
     }
 }

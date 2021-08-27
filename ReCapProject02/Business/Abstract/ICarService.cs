@@ -16,5 +16,7 @@ namespace Business.Abstract
         void Update(Car car);
         List<Car> GetByBrandId(int brandId);
 
+        List<Car> GetByUnityPrice(decimal min, decimal max);
+
     }
 }
