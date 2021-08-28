@@ -80,7 +80,7 @@ namespace DataAccess.Concrete
         public List<Car> GetAllCars(Expression<Func<Car, bool>> filter = null)
         {
             //DOLDUR!!!!!!!!!!!!!!!
-            throw new NotImplementedException();
+            return _cars;
         }
 
         /*public List<Car> GetAllCars()

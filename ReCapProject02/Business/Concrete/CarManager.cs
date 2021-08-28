@@ -54,7 +54,7 @@ namespace Business.Concrete
 
         public List<Car> GetByUnityPrice(decimal min, decimal max)
         {
-            return _carDal.GetAllCars(c => c.DailyPrice > min && c.DailyPrice < max);
+            return _carDal.GetAllCars(c => c.DailyPrice >= min && c.DailyPrice <= max);
         }
     }
 }
