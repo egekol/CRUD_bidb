@@ -77,7 +77,7 @@ namespace DataAccess.Concrete
             _cars.Remove(toDeleteCar);
         }
 
-        public List<Car> GetAllCars(Expression<Func<Car, bool>> filter = null)
+        public List<Car> GetAll(Expression<Func<Car, bool>> filter = null)
         {
             //DOLDUR!!!!!!!!!!!!!!!
             return _cars;

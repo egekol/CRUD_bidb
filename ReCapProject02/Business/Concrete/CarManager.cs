@@ -22,13 +22,20 @@ namespace Business.Concrete
         public List<Car> GetAll()
         {
             Console.WriteLine("List of all cars: ");
-            return _carDal.GetAllCars();
+            return _carDal.GetAll();
         }
 
         public void Add(Car car)
         {
-            _carDal.Add(car);
-            Console.WriteLine("New car added: {0}\n",car.Description);
+            if (car.Description.Length >2 && car.DailyPrice>0)
+            {
+                _carDal.Add(car);
+                Console.WriteLine("New car added: {0}\n",car.Description);
+            }
+            else
+            {
+                Console.WriteLine("Car could not added to the database: fill the information correctly.");
+            }
         }
 
         public void Delete(Car car)
@@ -46,15 +53,21 @@ namespace Business.Concrete
 
         public List<Car> GetByBrandId(int brandId)
         {
-            Console.WriteLine("List of cars filtered with {0}: ",brandId);
+            Console.WriteLine("List of cars filtered with {0}: ");
             //return _carDal.GetByBrandIdCars(brandId);
-            return _carDal.GetAllCars(c => c.BrandId == brandId);
+            return _carDal.GetAll(c => c.BrandId == brandId);
             
         }
 
         public List<Car> GetByUnityPrice(decimal min, decimal max)
         {
-            return _carDal.GetAllCars(c => c.DailyPrice >= min && c.DailyPrice <= max);
+            return _carDal.GetAll(c => c.DailyPrice >= min && c.DailyPrice <= max);
+        }
+
+        public List<Car> GetCarsByColorId(int colorId)
+        {
+            Console.WriteLine("List of cars filtered with '{0}' color Id: ",colorId);
+            return _carDal.GetAll(c => c.ColorId == colorId);
         }
     }
 }

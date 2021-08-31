@@ -13,7 +13,7 @@ namespace DataAccess.Abstract
         void Add(T car);
         void Update(T car);
         void Delete(T car);
-        List<T> GetAllCars(Expression<Func<T,bool>>filter =null);
+        List<T> GetAll(Expression<Func<T,bool>>filter =null);
         //List<T> GetByBrandIdCars(int brandId);
     }
 }

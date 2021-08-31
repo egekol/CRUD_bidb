@@ -2,6 +2,7 @@
 using DataAccess.Concrete;
 using Entities.Concrete;
 using System;
+using DataAccess.Concrete.EntityFramework;
 
 namespace CosnoleUI
 {
@@ -9,7 +10,7 @@ namespace CosnoleUI
     {
         static void Main(string[] args)
         {
-            CarManager carManager = new CarManager(new InMemoryCarDal());
+            CarManager carManager = new CarManager(new EfCarDal());
 
             foreach (var cars in carManager.GetAll())
             {
@@ -27,15 +28,15 @@ namespace CosnoleUI
                 Description = "White Renault, 2020 Model"
             });
 
-             carManager.Update(new Car
-             {
-                 Id = 1,
-                 BrandId = 3,
-                 ColorId = -1,
-                 ModelYear = 2021,
-                 DailyPrice = 320000,
-                 Description = "White Ford, 2021 Model"
-             });
+             // carManager.Update(new Car
+             // {
+             //     Id = 1,
+             //     BrandId = 3,
+             //     ColorId = -1,
+             //     ModelYear = 2021,
+             //     DailyPrice = 320000,
+             //     Description = "White Ford, 2021 Model"
+             // });
 
              Console.WriteLine("---------------------------------");
              foreach (var cars in carManager.GetAll())
