@@ -76,7 +76,9 @@
       <updated>1630067164566</updated>
       <workItem from="1630067173209" duration="2798000" />
       <workItem from="1630072765803" duration="4339000" />
-      <workItem from="1630407636328" duration="12105000" />
+      <workItem from="1630407636328" duration="12106000" />
+      <workItem from="1630440249874" duration="1844000" />
+      <workItem from="1630583573711" duration="2130000" />
     </task>
     <servers />
   </component>
@@ -97,32 +99,6 @@
           </properties>
           <option name="timeStamp" value="2" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/CosnoleUI/Program.cs</url>
-          <line>30</line>
-          <properties documentPath="D:\GitHub\CRUD_bidb\ReCapProject02\CosnoleUI\Program.cs" initialLine="30" containingFunctionPresentation="method 'Main'">
-            <startOffsets>
-              <option value="801" />
-            </startOffsets>
-            <endOffsets>
-              <option value="801" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/CosnoleUI/Program.cs</url>
-          <line>20</line>
-          <properties documentPath="D:\GitHub\CRUD_bidb\ReCapProject02\CosnoleUI\Program.cs" initialLine="20" containingFunctionPresentation="method 'Main'">
-            <startOffsets>
-              <option value="522" />
-            </startOffsets>
-            <endOffsets>
-              <option value="786" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

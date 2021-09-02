@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using Entities.Abstract;
-using Entities.Concrete;
+using Core.Entities;
 
-namespace DataAccess.Abstract
+
+namespace Core.DataAccess
 {
     //Generic constraint
     //Class - reference type
