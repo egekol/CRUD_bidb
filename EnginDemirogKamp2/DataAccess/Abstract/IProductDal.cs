@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Core.DataAccess;
+using Entities.DTOs;
 
 namespace DataAccess.Abstract
 {
@@ -19,6 +20,6 @@ namespace DataAccess.Abstract
         
         Buraya property'leri yazmak yerine:
         */
-
+        List<ProductDetailDto> getProductDetailDtos();
     }
 }

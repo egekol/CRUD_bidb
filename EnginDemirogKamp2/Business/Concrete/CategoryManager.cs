@@ -17,12 +17,12 @@ namespace Business.Concrete
 
         public List<Category> GetAll()
         {
-            _categoryDal.GetAll();
+            return _categoryDal.GetAll();
         }
 
         public Category GetById(int categoryId)
         {
-            _categoryDal.Get(c => c.CategoryId == categoryId);
+            return _categoryDal.Get(c => c.CategoryId == categoryId);
         }
     }
 }

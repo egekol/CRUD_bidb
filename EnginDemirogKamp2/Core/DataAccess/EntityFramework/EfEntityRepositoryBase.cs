@@ -7,8 +7,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Core.DataAccess.EntityFramework
 {
+    //Core sayesinde buraya entity context adında type oluşturarak herhangi db ve entity seçebilmeyi kolaylaştırıyoruz. 
+    
     public class EfEntityRepositoryBase<TEntity,TContext>:IEntityRepository<TEntity>
-        where TEntity: class, IEntity, new()
+        where TEntity: class, IEntity, new() //Type ların ne olabileceğini sınıflandırıyoruz.
         where TContext: DbContext, new()
     {
         public TEntity Get(Expression<Func<TEntity, bool>> filter)
