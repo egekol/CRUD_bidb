@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Business\Busine
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CosnoleUI", "CosnoleUI\CosnoleUI.csproj", "{C4F1F144-2D80-4279-8A3F-A5B086BE1125}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{798614EC-E84B-468B-932C-0BC90A734BE9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{C4F1F144-2D80-4279-8A3F-A5B086BE1125}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4F1F144-2D80-4279-8A3F-A5B086BE1125}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4F1F144-2D80-4279-8A3F-A5B086BE1125}.Release|Any CPU.Build.0 = Release|Any CPU
+		{798614EC-E84B-468B-932C-0BC90A734BE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{798614EC-E84B-468B-932C-0BC90A734BE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{798614EC-E84B-468B-932C-0BC90A734BE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{798614EC-E84B-468B-932C-0BC90A734BE9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

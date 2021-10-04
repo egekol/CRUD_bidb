@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 
 namespace DataAccess.Concrete
 {
@@ -53,6 +54,11 @@ namespace DataAccess.Concrete
             throw new NotImplementedException();
         }
 
+        public Car Get(Expression<Func<Car, bool>> filter)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Add(Car car)
         {
 
@@ -81,6 +87,11 @@ namespace DataAccess.Concrete
         {
             //DOLDUR!!!!!!!!!!!!!!!
             return _cars;
+        }
+
+        public List<CarDetailDto> GetCarDetailDtos()
+        {
+            throw new NotImplementedException();
         }
 
         /*public List<Car> GetAllCars()

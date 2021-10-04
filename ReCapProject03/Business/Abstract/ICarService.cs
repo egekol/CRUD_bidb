@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 
 namespace Business.Abstract
 {
@@ -18,5 +19,7 @@ namespace Business.Abstract
         List<Car> GetByUnityPrice(decimal min, decimal max);
 
         List<Car> GetCarsByColorId(int colorId);
+        List<CarDetailDto> GetCarDetailDtos();
+
     }
 }

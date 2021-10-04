@@ -10,11 +10,35 @@ namespace CosnoleUI
     {
         static void Main(string[] args)
         {
+            // GetAllBrands();
             CarManager carManager = new CarManager(new EfCarDal());
+            
+            foreach (var carDto in carManager.GetCarDetailDtos())
+            {
+                Console.WriteLine(carDto.BrandName + " -- " + carDto.Description + " -- "
+                 + carDto.ColorName + " ==> " + carDto.DailyPrice);
+            }
 
+            // BasicCrud();
+        }
+
+        private static void GetAllBrands()
+        {
+            BrandManager brandManager = new BrandManager(new EfBrandDal());
+
+            foreach (var brands in brandManager.GetAll())
+            {
+                Console.WriteLine(brands.BrandName + "\n");
+            }
+        }
+
+        private static void BasicCrud()
+        {
+            CarManager carManager = new CarManager(new EfCarDal());
+            
             foreach (var cars in carManager.GetAll())
             {
-                Console.WriteLine(cars.Description+"\n");
+                Console.WriteLine(cars.Description + "\n");
             }
 
             Console.WriteLine("----------------------------------");
@@ -22,34 +46,34 @@ namespace CosnoleUI
             {
                 //Id = 4,
                 BrandId = 2,
-                ColorId = -1,
+                ColorId = 1,
                 ModelYear = 2020,
                 DailyPrice = 230000,
                 Description = "White Renault, 2020 Model"
             });
 
-             carManager.Update(new Car
-             {
-                 Id = 1,
-                 BrandId = 3,
-                 ColorId = -1,
-                 ModelYear = 2021,
-                 DailyPrice = 320000,
-                 Description = "White Ford, 2021 Model"
-             });
+            carManager.Update(new Car
+            {
+                Id = 1,
+                BrandId = 3,
+                ColorId = 1,
+                ModelYear = 2021,
+                DailyPrice = 320000,
+                Description = "White Ford, 2021 Model"
+            });
 
-             Console.WriteLine("---------------------------------");
-             foreach (var cars in carManager.GetAll())
-             {
-                 Console.WriteLine(cars.Description + "\n");
-             }
+            Console.WriteLine("---------------------------------");
+            foreach (var cars in carManager.GetAll())
+            {
+                Console.WriteLine(cars.Description + "\n");
+            }
 
-             Console.WriteLine("-----------------------------------");
+            Console.WriteLine("-----------------------------------");
 
-             foreach (var car in carManager.GetByBrandId(2))
-             {
-                 Console.WriteLine(car.Description+" : " + car.BrandId+"\n");
-             }
+            foreach (var car in carManager.GetByBrandId(2))
+            {
+                Console.WriteLine(car.Description + " : " + car.BrandId + "\n");
+            }
         }
     }
 }
